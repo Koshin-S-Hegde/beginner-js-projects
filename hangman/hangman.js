@@ -40,18 +40,18 @@ const getNewWord = () => {
   return hangmanWords[Math.floor(Math.random() * hangmanWords.length)];
 }
 
-const guessLetter = (word) => {
+const guessLetter = word => {
   // allows user to guess letter and returns true or false based on current word 
   let letter = prompt('Please guess a letter.');
   return word.includes(letter);
 }
 
-const printHangman = (hangmanArray) => {
+const printHangman = hangmanArray => {
   // print playHangman array
   console.log(hangmanArray);
 }
 
-const printBlankWord = (word) => {
+const printBlankWord = word => {
   // print blanks for current word
   word = word.split('');
   for (let i = 0; i < word.length; i++) {
@@ -86,7 +86,7 @@ const wonGame = () => {
   }    
 }
 
-const lostGame = (playHangman) => {
+const lostGame = playHangman => {
   // checks whether playHangman equal to completedHangman
   return playHangman === completedHangman;
 }
